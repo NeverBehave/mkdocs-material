@@ -45,12 +45,12 @@ function foo(response) {
   } else if (!url.endsWith("index")) {
     url += "/index";
     let script = document.createElement("script")
-    document.getElementsByClassName("edit_history")[0].setAttribute("href", `${commit}docs/${url}.md`)
+    document.getElementsByClassName("edit_history")[0].setAttribute("href", `${commit}/docs/${url}.md`)
     script.src = `${api}?path=docs/${url}.md&callback=foo`
     document.getElementsByTagName("head")[0].appendChild(script)
   }
 }
-if (url == "") {
+if (url === "/") {
   // HomePage
   document.getElementsByClassName("edit_history")[0].setAttribute("href", `${commit}/docs/index.md`)
   script.src = `${api}?path=docs/index.md&callback=foo`
